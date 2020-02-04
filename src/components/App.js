@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import Web3 from 'web3'
-import logo from '../logo.png';
 import './App.css';
 import Marketplace from '../abis/Marketplace.json'
 import Navbar from './Navbar'
 import Main from './Main'
+import Thank_You from './Thank_You'
+
+// Starts everything off calling on data and showing the data using Main.js
 
 class App extends Component {
 
@@ -64,6 +66,7 @@ class App extends Component {
     this.purchaseProduct = this.purchaseProduct.bind(this)
   }
 
+  // List created products
   createProduct(name, price) {
     this.setState({ loading: true })
     this.state.marketplace.methods.createProduct(name, price).send({ from: this.state.account })
@@ -71,7 +74,8 @@ class App extends Component {
       this.setState({ loading: false })
     })
   }
-
+  
+// List purchased products
   purchaseProduct(id, price) {
     this.setState({ loading: true })
     this.state.marketplace.methods.purchaseProduct(id).send({ from: this.state.account, value: price })
@@ -82,19 +86,25 @@ class App extends Component {
 
   render() {
     return (
+
+      
       <div>
+        {/* Nav Bar call */}
         <Navbar account={this.state.account} />
+        {/* Nav Bar call */}
         <div className="container-fluid mt-5">
           <div className="row">
+            {/* Call for the main page */}
             <main role="main" className="col-lg-12 d-flex">
               { this.state.loading
                 ? <div id="loader" className="text-center"><p className="text-center">Loading...</p></div>
-                : <Main
+                : <Main        //Refers to main.js main function which shows these items
                   products={this.state.products}
                   createProduct={this.createProduct}
                   purchaseProduct={this.purchaseProduct} />
               }
             </main>
+            {/* Call for the main page */}
           </div>
         </div>
       </div>
