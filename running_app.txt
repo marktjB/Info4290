@@ -1,0 +1,11 @@
+To start the app
+// Starts everything by calling on data and showing the data using Main.js
+// npm run start
+//open ganache
+// once the application loads, metamask will try to open, change it back to the etherum network
+// eventually you should be prompted to enter your password, this is with regards to your metamask account
+// mine is store in my notes
+//then change your network back to your local host (127.0.0.1)
+// run 'npm install'
+
+//To run just a single .js file, enter "node app.js" where app.js is the name of your file

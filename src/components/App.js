@@ -6,8 +6,6 @@ import Navbar from './Navbar'
 import Main from './Main'
 import Thank_You from './Thank_You'
 
-// Starts everything off calling on data and showing the data using Main.js
-
 class App extends Component {
 
   async componentWillMount() {
@@ -85,6 +83,7 @@ class App extends Component {
   }
 
   render() {
+
     return (
 
       

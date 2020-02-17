@@ -15,7 +15,7 @@ class Main extends Component {
     return (
       <div id="content">
         <h1>Enter your Voter's Identification Number</h1>
-        
+         
         <form //onSubmit={(event) => {
           // event.preventDefault()
           // const name = this.productName.value
@@ -32,6 +32,7 @@ class Main extends Component {
               // required />
               />
           </div>
+          
           <Router>
           <Link to="/vote">
           <button type="submit" className="btn btn-primary">Validate your number</button>
