@@ -1,5 +1,5 @@
-const Marketplace = artifacts.require("Marketplace");
+var Election = artifacts.require("./Election.sol");
 
 module.exports = function(deployer) {
-  deployer.deploy(Marketplace);
+  deployer.deploy(Election);
 };
