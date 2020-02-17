@@ -6,12 +6,12 @@ This is a final group project that uses blockchain
 - Mark & Steven
     - [] input data onto chain customized to vote
     - [] looking at how blockchain data is stored and where it is
-    - [] create random ids for user from function and maybe time? this id is unique, identify user and location (two strings put together)
+    - [x] create random ids for user from function and maybe time? this id is unique, identify user and location (two strings put together)
 - Claudine
-    - [] create database for users
+    - [x] create database for users
         - [] database will probably have voting candidates as well
-    - [] create login system
-    - [] connect it to our web app
+    - [x] create login system
+    - [x] connect it to our web app
 - Johan
     - [] UI for the Municipal and Provincial Voting
     - [] clean up the overall UI
@@ -22,6 +22,34 @@ This is a final group project that uses blockchain
     - [] make our app public
 
 
+Follow the steps below to download, install, and run this project.
+
+## Dependencies
+Install these prerequisites to follow along with the tutorial. See free video tutorial or a full explanation of each prerequisite.
+- NPM: https://nodejs.org
+- Truffle: https://github.com/trufflesuite/truffle
+- Ganache: http://truffleframework.com/ganache/
+- Metamask: https://metamask.io/
+
+## Step 2. Install dependencies
+```
+$ cd election-2019_update
+$ npm install
+```
+## Step 3. Start Ganache
+Open the Ganache GUI client. This will start your local blockchain instance.
+
+## Step 4. Compile & Deploy Election Smart Contract
+`$ truffle migrate --reset`
+You must migrate the election smart contract each time your restart ganache.
+
+## Step 5. Configure Metamask
+- Load up Metamask, you may be prompted for a password if you have not loaded it recently.
+- Else you'll just need to change your network to the Main network and then to your custom RPC (which is on 127.0.0.1)
+
+## Step 6. Run the Front End Application
+`$ npm run dev`
+This is because of settings that are set in the package.json
 
 
 # References
