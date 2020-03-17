@@ -5,14 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Election Results</title>
-
+    <title>Can-Vote Elections</title>
+    <link rel="icon" href="logoWcircle.png">
     <!-- Bootstrap -->
     <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
     <!-- From Other Example Code -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- Materialize CDN call-->
+      <!-- Compiled and minified CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <!-- Materialize -->
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -22,86 +33,51 @@
     <![endif]-->
   </head>
   <body>
-    <!-- NavBar -->
-    <!-- <div>
-    <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-      <div> <img src=logoWcircle.png alt="Logo" width="40" /> </div>
-        <div><a
-          className="navbar-brand col-sm-3 col-md-2 mr-0"
-          href="http://www.dappuniversity.com/bootcamp"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Can-Vote
-        </a></div>
-        
-        <ul className="navbar-nav px-3">
-          <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
-            <small className="text-white"><span id="account">ID: Steven Saito</span></small>
-          </li>
+      <ul id="dropdown1" class="dropdown-content">
+        <li><a href="#!">one</a></li>
+        <li><a href="#!">two</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">three</a></li>
+      </ul>
+    <nav>
+      <!-- <div class="container-fluid"> -->
+      <div class="container-fliud nav-wrapper blue-grey darken-4">
+        <p class="brand-logo"><img src=logoWcircle.png alt="Logo" width="45" /> Can-Vote</p>
+        <ul class="right hide-on-med-and-down">
+          <li><p id="accountAddress"></p></li>
+          <!-- Sign out function.......????? -->
+          <!-- <li><a id="accountAddress" class="dropdown-trigger" href="#!" data-target="dropdown">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li> -->
         </ul>
-      </nav>
-      </div> --><nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <img src=logoWcircle.png alt="Logo" width="45" />
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Page 1</a></li>
-    </ul>
-  </div>
-</nav>
-      <!-- <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow"><div><img src=logoWcircle.png alt="Logo" width="40" /></div></nav> -->
-      <!-- NavBar -->
+        </ul>
+      </div>
+    </nav>
     <div class="container" style="width: 650px;">
       <div class="row">
         <div class="col-lg-12">
-          <h1 class="text-center">Election Results</h1>
+          <h1 class="text-center">Voting Poll</h1>
           <hr/>
-          <br/>
+          <!-- <br/> -->
+          <!---THis is the loader called in app.js-->
           <div id="loader">
             <p class="text-center">Loading...</p>
-          </div>
-          <div id="content" style="display: none;">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Name</th>
-                  <th scope="col">Votes</th>
-                </tr>
-              </thead>
-              <tbody id="candidatesResults">
-              </tbody>
-            </table>
-            <hr/>
-            <!-- <form onSubmit="App.castVote(); return false;">
-              <div class="form-group">
-                <label for="candidatesSelect">Select Candidate</label>
-                <select class="form-control" id="candidatesSelect">
-                </select>
-              </div>
-              <button type="submit" class="btn btn-primary">Vote</button>
-              <hr />
-            </form> -->
-            <!-- <form onSubmit="App.castVote(); return false;">
-              <div class="form-group">
-                <label for="candidatesSelect">Select Candidate</label>
-                <select class="form-control" id="candidatesSelect">
-                </select>
-              </div>
-              <button type="submit" class="btn btn-primary">Vote</button>
-              <hr />
-            </form> -->
+          </div> 
+          <!---THis is the loader called in app.js-->
+          <!---THis is the end page called in app.js-->
+          <div id="endPage">
+            <p class="text-center" style="font-size:18px;">Thank you for voting. You may close this window</p>
+            <!-- Make a call that will close the window after 10 seconds??? -->
+            <!-- <p id="candidateId"></p> --> <!----Attempt to show vote after user has voted-->
+          </div> 
+          <!---THis is the end page called in app.js-->
+          <div id="content" style="display: none;"> <!---THis is the content called in app.js-->
+            <p class="text-center" style="font-size:18px;">Please select one candidate to vote for from the dropdown menu</p><br />
             <form onSubmit="App.castVote(); return false;">
             <div className="form-group mr-sm-2">
-              <!-- <input type="radio" id="candidatesSelect" /> -->
-              <select type="radio" class="form-control" id="candidatesSelect"></select>
-            </div>
-            <button type="submit" class="btn btn-primary">Vote</button>
+              <select class="form-control" id="candidatesSelect" style="font-size: 16px;"></select>
+            </div><p></p>
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Vote</button>
           </form>
-            <p id="accountAddress" class="text-center"></p>
+          <!-- ALREADY DOES A DO YOU WANT TO CONFIRM YOUR VOTE WITH METAMASK,.... KIND OF  -->
           </div>
         </div>
       </div>
@@ -114,5 +90,10 @@
     <script src="js/web3.min.js"></script>
     <script src="js/truffle-contract.js"></script>
     <script src="js/app.js"></script>
+    
   </body>
 </html>
+
+
+
+<!-- Boostrap 4 https://getbootstrap.com/docs/4.0/components/buttons/ -->

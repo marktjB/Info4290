@@ -1,7 +1,9 @@
+
 App = {
   web3Provider: null,
   contracts: {},
   account: '0x0',
+  // private: '0x0',
   hasVoted: false,
 
   init: function() {
@@ -52,15 +54,26 @@ App = {
     });
   },
 
+  //////////////////////beginning of render the page
   render: function() {
     var electionInstance;
+    /////////////intializes the div id tags in the index.html file
     var loader = $("#loader");
     var content = $("#content");
+    var endPage = $("#endPage"); 
 
+    ////shows intially when screen is refreshing, see when pressing f5
     loader.show();
     content.hide();
+    endPage.hide();
 
-    // Load account data
+    // web3.eth.getAccounts(function(err, response) { 
+    //   if (err === null) {
+    //     App.private = response;
+    //   }
+    // });
+
+    //////// Load account data
     web3.eth.getCoinbase(function(err, account) {
       if (err === null) {
         App.account = account;
@@ -68,7 +81,7 @@ App = {
       }
     });
 
-    // Load contract data
+    /////// Load contract data
     App.contracts.Election.deployed().then(function(instance) {
       electionInstance = instance;
       return electionInstance.candidatesCount();
@@ -97,10 +110,14 @@ App = {
       }
       return electionInstance.voters(App.account);
     }).then(function(hasVoted) {
-      // Do not allow a user to vote
+      //////// Do not allow a user to vote
+      //////this is when the form has been submitted
       if(hasVoted) {
-        $('form').hide();
+        $('form').hide();    //hides form from html
+        endPage.show();     ///shows my custom thank you message
       }
+
+      //shows the typically voting page when the user has not voted
       loader.hide();
       content.show();
     }).catch(function(error) {
@@ -114,12 +131,32 @@ App = {
       return instance.vote(candidateId, { from: App.account });
     }).then(function(result) {
       // Wait for votes to update
+      //////when refreshing or updating
       $("#content").hide();
+      $("#endPage").hide();
       $("#loader").show();
     }).catch(function(err) {
       console.error(err);
     });
+  },
+
+  question1: function() {
+
+    var fname = $('#fname').val();
+    // var test = web3.eth.accounts.create(fname);
+    // var test = web3.eth.accounts.privateKeyToAccount(fname);
+    // window.alert(web3.eth.accounts.privateKeyToAccount(fname));
+    // web3.eth.accounts.wallet.add(fname)
+    // web3.eth.accounts.privateKeyToAccount(fname);
+    if (fname == 32) {
+      window.alert("Im cranky");
+    } else {
+      // window.alert("lost enough");
+      window.alert(App.account);
+      // web3.eth.accounts.create(fname);
+    }
   }
+  
 };
 
 $(function() {
@@ -127,3 +164,4 @@ $(function() {
     App.init();
   });
 });
+

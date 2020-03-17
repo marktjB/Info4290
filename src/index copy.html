@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Election Results</title>
+
+    <!-- Bootstrap -->
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- From Other Example Code -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <!-- NavBar ----------------------------------------------------------------------->
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a href="index.html"><img src=logoWcircle.png alt="Logo" width="45" /></a>
+        </div>
+        <div style="text-align: center;">
+          <!-- <ul className="navbar-nav px-3"> -->
+            <!-- <li className="nav-item text-nowrap d-none d-sm-none d-sm-block"> -->
+              <small id="webisteName" className="text-white" style="color:white; font-size:26px; vertical-align: baseline;">Can-Vote</small>
+            <!-- </li> -->
+          <!-- </ul> -->
+        </div>
+        <div style="text-align: right;">
+          <!-- <ul className="navbar-nav px-3"> -->
+            <!-- <li className="nav-item text-nowrap d-none d-sm-none d-sm-block"> -->
+              <small id="accountAddress" className="text-white" style="color:white;"></small>
+            <!-- </li> -->
+          <!-- </ul> -->
+        </div>
+      </div>
+      <!-- <p id="accountAddress" name="accountAddress" style="color:white;"></p> -->
+    </nav>
+    <!-- <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow"><div><img src=logoWcircle.png alt="Logo" width="40" /></div></nav> -->
+    <!-- NavBar ----------------------------------------------------------------------->
+    <div class="container" style="width: 650px;">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="text-center">Election Results</h1>
+          <hr/>
+          <br/>
+          <!---THis is the loader called in app.js-->
+          <div id="loader">
+            <p class="text-center">Loading...</p>
+          </div> 
+          <!---THis is the loader called in app.js-->
+          <!---THis is the end page called in app.js-->
+          <div id="endPage">
+            <p class="text-center">Thank you for voting. You may close this window</p>
+            <!-- Make a call that will close the window after 10 seconds??? -->
+            <!-- <p id="candidateId"></p> --> <!----Attempt to show vote after user has voted-->
+          </div> 
+          <!---THis is the end page called in app.js-->
+          <div id="content" style="display: none;"> <!---THis is the content called in app.js-->
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Votes</th>
+                </tr>
+              </thead>
+              <tbody id="candidatesResults">     <!---Should probably remove because the voters shouldn't be able to see who they're voting for-->
+              </tbody>
+            </table>
+            <hr/>
+            <form onSubmit="App.castVote(); return false;">
+            <div className="form-group mr-sm-2">
+              <!-- <input type="radio" id="candidatesSelect" /> -->
+              <select class="form-control" id="candidatesSelect"></select>
+            </div><p></p>
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Vote</button>
+          </form>
+          <!-- Original holder for account ID -->
+            <!-- <p id="accountAddress" class="text-center"></p> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+    
+  </body>
+</html>
+
+
+
+<!-- Boostrap 4 https://getbootstrap.com/docs/4.0/components/buttons/ -->

@@ -1,0 +1,58 @@
+<html>
+<head>
+  <title>Firebase Login</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="login_div" class="main-div">
+    <h3>Login</h3>
+    <input type="email" placeholder="Email..." id="email_field" />
+    <input type="password" placeholder="Password..." id="password_field" />
+
+    <button onclick="login()">Login to Account</button>
+  </div>
+
+  <div id="user_div" class="loggedin-div">
+    <h3>Welcome User</h3>
+    <p id="user_para">Welcome to the Voting App.</p>
+    
+    <button onclick="menuFunction()">Vote here</button>&nbsp;
+    <!--<button onclick="candidatesFunction()">List of Candidates</button>&nbsp;-->
+    <button onclick="logout()">Logout</button>
+  </div>
+<script>
+  function menuFunction(){
+    window.open("index.html");
+  }
+
+  function candidatesFunction(){
+
+    window.open("candidates.html");
+  }
+</script>
+
+
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyBkM0tuAI8ywCKuLKIThxd2ucT7lxSmmvs",
+        authDomain: "info4290-31169.firebaseapp.com",
+        databaseURL: "https://info4290-31169.firebaseio.com",
+        projectId: "info4290-31169",
+        storageBucket: "info4290-31169.appspot.com",
+        messagingSenderId: "911386490534",
+        appId: "1:911386490534:web:99737c027c3b44f1e16667"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+  <script src="login_script.js"></script>
+
+</body>
+</html>
