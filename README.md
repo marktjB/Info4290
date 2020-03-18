@@ -62,3 +62,15 @@ This is because of settings that are set in the package.json
 - [Potential for Javascript, confirm pop up window](https://www.w3schools.com/jsref/met_win_confirm.asp)
 - [Materialize Navbar](https://materializecss.com/navbar.html)
 - [Materialize ](https://materializecss.com/getting-started.html)
+
+
+
+// https://www.tutorialspoint.com/solidity/solidity_arrays.htm
+// https://solidity.readthedocs.io/en/v0.4.21/types.html
+// https://ethereum.stackexchange.com/questions/10811/solidity-concatenate-uint-into-a-string
+// https://ethereum.stackexchange.com/questions/11533/how-to-initialize-an-empty-array-and-push-items-into-it
+//arrays
+// https://subscription.packtpub.com/book/application_development/9781788831383/5/ch05lvl1sec61/the-for-loop
+//loop
+//https://hackernoon.com/working-with-strings-in-solidity-c4ff6d5f8008
+// working with strings

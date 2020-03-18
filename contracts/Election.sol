@@ -1,7 +1,13 @@
 pragma solidity 0.4.25;
+// import "./Migrations.sol";
+// import "./delete.js";
 
 contract Election {
     // Model a Candidate
+    //Candidate list
+    //https://www.elections.ca/content.aspx?section=ele&document=bc&dir=pas/38e/loc/lis&lang=e
+    string[] x = ['DE LA PENA, Romeo (Green Party)', 'HIEBERT, Russ (Conservative)', 'HIGGINBOTHAM, Judy (Liberal)', 'KAUR, H. Pummy (N.D.P.)', 'TAYLOR, Pat (Canadian Action)']; //array of candidates
+
     struct Candidate {
         uint id;
         string name;
@@ -21,17 +27,19 @@ contract Election {
         uint indexed _candidateId
     );
 
-    // Add Candidates through loop
+    
+
+    // Add Candidates through the loop
     constructor () public {
-        addCandidate("Renzo");
-        addCandidate("Raizha");
-        addCandidate("Riaz");
+        for(uint i=0; i<x.length; i++){
+            addCandidate(x[i]);
+        }
+        // addCandidate("Renzo");
     }
 
     function addCandidate (string _name) private {
         candidatesCount ++;
-        // candidates[candidatesCount] = Candidate(candidatesCount, _name, 0); 
-        candidates[candidatesCount] = Candidate(candidatesCount, _name, 0); //test line
+        candidates[candidatesCount] = Candidate(candidatesCount, _name, 0);
     }
 
     function vote (uint _candidateId) public {

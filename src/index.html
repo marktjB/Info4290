@@ -1,97 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Can-Vote Elections</title>
-    <link rel="icon" href="logoWcircle.png">
-    <!-- Bootstrap -->
-    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
-    <!-- From Other Example Code -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-    <!-- Materialize CDN call-->
-      <!-- Compiled and minified CSS -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-      <!-- Compiled and minified JavaScript -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-      <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-    <!-- Materialize -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Can-Vote Elections</title>
+  <link rel="icon" href="logoWcircle.png">
+  <!-- Bootstrap -->
+  <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+  <!-- From Other Example Code -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+  <!-- Materialize Themee CDN call-->
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+  <!-- Materialize -->
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <body>
-      <ul id="dropdown1" class="dropdown-content">
-        <li><a href="#!">one</a></li>
-        <li><a href="#!">two</a></li>
-        <li class="divider"></li>
-        <li><a href="#!">three</a></li>
+</head>
+
+<body>
+  <!-- Navigation bar -->
+  <nav>
+    <!-- Div tag creates separation and organizes the code -->
+    <div class="container-fliud nav-wrapper blue-grey darken-4">
+      <!-- Logo in nav bar -->
+      <p class="brand-logo"><img src=logoWcircle.png alt="Logo" width="45" /> Can-Vote</p>
+      <ul class="right hide-on-med-and-down">
+        <li>
+          <!-- Shows user account  -->
+          <p id="accountAddress"></p>
+        </li>
       </ul>
-    <nav>
-      <!-- <div class="container-fluid"> -->
-      <div class="container-fliud nav-wrapper blue-grey darken-4">
-        <p class="brand-logo"><img src=logoWcircle.png alt="Logo" width="45" /> Can-Vote</p>
-        <ul class="right hide-on-med-and-down">
-          <li><p id="accountAddress"></p></li>
-          <!-- Sign out function.......????? -->
-          <!-- <li><a id="accountAddress" class="dropdown-trigger" href="#!" data-target="dropdown">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li> -->
-        </ul>
-        </ul>
-      </div>
-    </nav>
-    <div class="container" style="width: 650px;">
-      <div class="row">
-        <div class="col-lg-12">
-          <h1 class="text-center">Voting Poll</h1>
-          <hr/>
-          <!-- <br/> -->
-          <!---THis is the loader called in app.js-->
-          <div id="loader">
-            <p class="text-center">Loading...</p>
-          </div> 
-          <!---THis is the loader called in app.js-->
-          <!---THis is the end page called in app.js-->
-          <div id="endPage">
-            <p class="text-center" style="font-size:18px;">Thank you for voting. You may close this window</p>
-            <!-- Make a call that will close the window after 10 seconds??? -->
-            <!-- <p id="candidateId"></p> --> <!----Attempt to show vote after user has voted-->
-          </div> 
-          <!---THis is the end page called in app.js-->
-          <div id="content" style="display: none;"> <!---THis is the content called in app.js-->
-            <p class="text-center" style="font-size:18px;">Please select one candidate to vote for from the dropdown menu</p><br />
-            <form onSubmit="App.castVote(); return false;">
+    </div>
+  </nav>
+  <div class="container" style="width: 650px;">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="text-center">Voting Poll</h1>
+        <hr />
+        <!---THis is the loader called in app.js-->
+        <!-- This div tag will be called on when the app.js file calls it -->
+        <!-- Some of the div tags only show at specific times due to app.js -->
+        <div id="loader">
+          <p class="text-center">Loading...</p>
+        </div>
+        <!---THis is the loader called in app.js-->
+        <!---THis is the end page called in app.js-->
+        <div id="endPage">
+          <p class="text-center" style="font-size:18px;">Thank you for voting. You may close this window</p>
+        </div>
+        <!---THis is the end page called in app.js-->
+        <div id="content" style="display: none;">
+          <!---THis is the content called in app.js-->
+          <p class="text-center" style="font-size:18px;">Please select one candidate to vote for from the dropdown menu
+          </p><br />
+          <!-- Form that submits the user's vote -->
+          <form onSubmit="App.castVote(); return false;">
             <div className="form-group mr-sm-2">
+              <!-- The select tag that shows the candidates. Could not figure out other way that showed all candidates -->
               <select class="form-control" id="candidatesSelect" style="font-size: 16px;"></select>
-            </div><p></p>
+            </div>
+            <p></p>
             <button type="submit" class="btn btn-primary btn-lg btn-block">Vote</button>
           </form>
           <!-- ALREADY DOES A DO YOU WANT TO CONFIRM YOUR VOTE WITH METAMASK,.... KIND OF  -->
-          </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/web3.min.js"></script>
-    <script src="js/truffle-contract.js"></script>
-    <script src="js/app.js"></script>
-    
-  </body>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/web3.min.js"></script>
+  <script src="js/truffle-contract.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+
 </html>
 
 
