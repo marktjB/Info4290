@@ -23,6 +23,18 @@ firebase.auth().onAuthStateChanged(function (user) {
   }
 });
 
+document.querySelector("#email_field").addEventListener("keyup", event => {
+  if(event.key !== "Enter") return; 
+  document.querySelector("#login_button").click();
+  event.preventDefault();
+});
+
+document.querySelector("#password_field").addEventListener("keyup", event => {
+  if(event.key !== "Enter") return; 
+  document.querySelector("#login_button").click();
+  event.preventDefault();
+});
+
 function login() {
 
   var userEmail = document.getElementById("email_field").value;
