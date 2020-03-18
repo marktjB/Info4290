@@ -4,19 +4,19 @@ This is a final group project that uses blockchain
 
 # To Do
 - Mark & Steven
-    - [] input data onto chain customized to vote
-    - [] looking at how blockchain data is stored and where it is
+    - [x] input data onto chain customized to vote
+    - [x] looking at how blockchain data is stored and where it is
     - [x] create random ids for user from function and maybe time? this id is unique, identify user and location (two strings put together)
 - Claudine
     - [x] create database for users
-        - [] database will probably have voting candidates as well
+        - [x] database will probably have voting candidates as well
     - [x] create login system
     - [x] connect it to our web app
 - Johan
-    - [] UI for the Municipal and Provincial Voting
-    - [] clean up the overall UI
-    - [] End splash screen to thank the user for voting and close, we want it to be its own separate page and not added onto previous
-    - [] make tab icon our icon
+    - [x] UI for Federal Voting (edited)
+    - [x] clean up the overall UI
+    - [x] End splash screen to thank the user for voting and close, we want it to be its own separate page and not added onto previous
+    - [x] make tab icon our icon
 
 - Far goal
     - [] make our app public
@@ -58,3 +58,7 @@ This is because of settings that are set in the package.json
 - [react links to another page](https://reacttraining.com/react-router/web/guides/quick-start)
 - [react routing](https://www.golangprograms.com/how-to-create-simple-react-router-to-navigate-multiple-pages.html)
 - [react routing 2](https://reacttraining.com/react-router/web/api/Route)
+- [icon for tab](https://stackoverflow.com/questions/4888377/how-to-add-a-browser-tab-icon-favicon-for-a-website)
+- [Potential for Javascript, confirm pop up window](https://www.w3schools.com/jsref/met_win_confirm.asp)
+- [Materialize Navbar](https://materializecss.com/navbar.html)
+- [Materialize ](https://materializecss.com/getting-started.html)
