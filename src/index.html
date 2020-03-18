@@ -9,22 +9,12 @@
   <title>Can-Vote Elections</title>
   <link rel="icon" href="logoWcircle.png">
   <!-- Bootstrap -->
-  <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
-  <!-- From Other Example Code -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- From Other Example Code -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-  <!-- Materialize Themee CDN call-->
-  <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <!--Import Google Icon Font-->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!--Import materialize.css-->
-  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
-  <!-- Materialize -->
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -38,20 +28,29 @@
   <!-- Navigation bar -->
   <nav>
     <!-- Div tag creates separation and organizes the code -->
-    <div class="container-fliud nav-wrapper blue-grey darken-4">
+    <nav class="navbar navbar-dark bg-dark">
       <!-- Logo in nav bar -->
-      <p class="brand-logo"><img src=logoWcircle.png alt="Logo" width="45" /> Can-Vote</p>
-      <ul class="right hide-on-med-and-down">
-        <li>
-          <!-- Shows user account  -->
-          <p id="accountAddress"></p>
-        </li>
-      </ul>
-    </div>
+      <span class="navbar-brand mb-0 h1">
+        <img src=logoWcircle.png alt="Logo" width="30" height="30" class="d-inline-block align-top" />
+        Can-Vote
+      </span>
+
+      <!-- Shows user account  -->
+      <div style="text-align: right;">
+        <ul className="nav">
+          <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
+            <small id="accountAddress" className="text-white" style="color:white; vertical-align:text-bottom;"></small>
+          </li>
+        </ul>
+      </div>
+         
+    
   </nav>
   <div class="container" style="width: 650px;">
     <div class="row">
       <div class="col-lg-12">
+        <br>
+        <br>
         <h1 class="text-center">Voting Poll</h1>
         <hr />
         <!---THis is the loader called in app.js-->
@@ -67,11 +66,10 @@
         </div>
         <!---THis is the end page called in app.js-->
         <div id="content" style="display: none;">
-          <!---THis is the content called in app.js-->
-          <p class="text-center" style="font-size:18px;">Please select one candidate to vote for from the dropdown menu
-          </p><br />
           <!-- Form that submits the user's vote -->
           <form onSubmit="App.castVote(); return false;">
+            <p class="text-center" style="font-size:18px;">Please select one candidate to vote for from the dropdown menu
+            </p><br />
             <div className="form-group mr-sm-2">
               <!-- The select tag that shows the candidates. Could not figure out other way that showed all candidates -->
               <select class="form-control" id="candidatesSelect" style="font-size: 16px;"></select>
