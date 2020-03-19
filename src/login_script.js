@@ -23,12 +23,14 @@ firebase.auth().onAuthStateChanged(function (user) {
   }
 });
 
+// Allows user to press enter to to log in from the email field
 document.querySelector("#email_field").addEventListener("keyup", event => {
   if(event.key !== "Enter") return; 
   document.querySelector("#login_button").click();
   event.preventDefault();
 });
 
+// Allows user to press enter to to log in from the password field
 document.querySelector("#password_field").addEventListener("keyup", event => {
   if(event.key !== "Enter") return; 
   document.querySelector("#login_button").click();
