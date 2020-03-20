@@ -1,39 +1,56 @@
 <html>
-
 <head>
-  <title>Firebase Login</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Can-Vote - Login</title>
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="logoWcircle.png">
+  <!-- Bootstrap -->
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- From Other Example Code -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </head>
-
 <body>
+
+  <nav class="navbar navbar-dark bg-dark">
+    <span class="navbar-brand mb-0 h1">
+      <img src=logoWcircle.png alt="Logo" width="30" height="30" class="d-inline-block align-top" />
+      Can-Vote
+    </span>
+</nav>
 
   <div id="login_div" class="main-div">
     <h3>Login</h3>
     <input type="email" placeholder="Email..." id="email_field" />
     <input type="password" placeholder="Password..." id="password_field" />
-
-    <button onclick="login()">Login to Account</button>
+    <!--Calls login() function from the login_script.js file to authentic user with firebase-->
+    <button id="login_button" onclick="login()" >Login to Account</button>
   </div>
 
   <div id="user_div" class="loggedin-div">
     <h3>Welcome User</h3>
     <p id="user_para">Welcome to the Voting App.</p>
-
+    <!--Calls the menuFunction to redirect user to new window-->
     <button onclick="menuFunction()">Vote here</button>&nbsp;
     <!--<button onclick="candidatesFunction()">List of Candidates</button>&nbsp;-->
     <button onclick="logout()">Logout</button>
   </div>
-  <script>
-    function menuFunction() {
-      window.open("index.html");
-    }
+<script>
 
-    function candidatesFunction() {
+  //Function to redirect user to voting menu
+  function menuFunction(){
+    window.open("index.html");
+  }
 
-      window.open("candidates.html");
-    }
-  </script>
+  function candidatesFunction(){
+
+    window.open("candidates.html");
+  }
+</script>
 
 
   <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
@@ -41,21 +58,29 @@
     // Initialize Firebase
     // Your web app's Firebase configuration
     var firebaseConfig = {
-      apiKey: "AIzaSyBkM0tuAI8ywCKuLKIThxd2ucT7lxSmmvs",
-      authDomain: "info4290-31169.firebaseapp.com",
-      databaseURL: "https://info4290-31169.firebaseio.com",
-      projectId: "info4290-31169",
-      storageBucket: "info4290-31169.appspot.com",
-      messagingSenderId: "911386490534",
-      appId: "1:911386490534:web:99737c027c3b44f1e16667"
+        apiKey: "AIzaSyBkM0tuAI8ywCKuLKIThxd2ucT7lxSmmvs",
+        authDomain: "info4290-31169.firebaseapp.com",
+        databaseURL: "https://info4290-31169.firebaseio.com",
+        projectId: "info4290-31169",
+        storageBucket: "info4290-31169.appspot.com",
+        messagingSenderId: "911386490534",
+        appId: "1:911386490534:web:99737c027c3b44f1e16667"
     };
 
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
   </script>
+  <!--Script needed for user login. Access firebase login creditials-->
   <script src="login_script.js"></script>
 
-</body>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/web3.min.js"></script>
+  <script src="js/truffle-contract.js"></script>
+  <script src="js/app.js"></script>
 
+</body>
 </html>
