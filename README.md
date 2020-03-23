@@ -68,3 +68,5 @@ This is because of settings that are set in the package.json
 - [Initializing an array Solidity](https://ethereum.stackexchange.com/questions/11533/how-to-initialize-an-empty-array-and-push-items-into-it)
 - [Loops in solidity](https://subscription.packtpub.com/book/application_development/9781788831383/5/ch05lvl1sec61/the-for-loop)
 - [Solidity, working with strings and storing items in variables](https://hackernoon.com/working-with-strings-in-solidity-c4ff6d5f8008)
+- [Firebase is not a function console error](https://stackoverflow.com/questions/38248723/firebase-database-is-not-a-function)
+- [Implement a Realtime Firebase Database in a webpage](https://www.freakyjolly.com/implement-realtime-firebase-database-in-a-webpage-from-scratch/)
