@@ -27,18 +27,21 @@
     <h3>Login</h3>
     <input type="email" placeholder="Email..." id="email_field" />
     <input type="password" placeholder="Password..." id="password_field" />
+    <!--Calls login() function from the login_script.js file to authentic user with firebase-->
     <button id="login_button" onclick="login()" >Login to Account</button>
   </div>
 
   <div id="user_div" class="loggedin-div">
     <h3>Welcome User</h3>
     <p id="user_para">Welcome to the Voting App.</p>
-    
+    <!--Calls the menuFunction to redirect user to new window-->
     <button onclick="menuFunction()">Vote here</button>&nbsp;
     <!--<button onclick="candidatesFunction()">List of Candidates</button>&nbsp;-->
     <button onclick="logout()">Logout</button>
   </div>
 <script>
+
+  //Function to redirect user to voting menu
   function menuFunction(){
     window.open("index.html");
   }
@@ -68,6 +71,7 @@
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
   </script>
+  <!--Script needed for user login. Access firebase login creditials-->
   <script src="login_script.js"></script>
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
