@@ -70,4 +70,4 @@ This is because of settings that are set in the package.json
 - [Solidity, working with strings and storing items in variables](https://hackernoon.com/working-with-strings-in-solidity-c4ff6d5f8008)
 - [Firebase is not a function console error](https://stackoverflow.com/questions/38248723/firebase-database-is-not-a-function)
 - [Implement a Realtime Firebase Database in a webpage](https://www.freakyjolly.com/implement-realtime-firebase-database-in-a-webpage-from-scratch/)
--[Bootstrap](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
+- [Bootstrap](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
