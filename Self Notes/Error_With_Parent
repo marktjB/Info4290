@@ -1,3 +1,0 @@
-If you're gettting an error with the parent. JSX expressions must have one parent element
-Wrap your html elements in <div> tags
-Seems to solve the problem
