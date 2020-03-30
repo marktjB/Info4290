@@ -117,6 +117,7 @@ App = {
     });
   },
 
+  //Part that cast vote to smart contract
   castVote: function () {
     var candidateId = $('#candidatesSelect').val();
     App.contracts.Election.deployed().then(function (instance) {
