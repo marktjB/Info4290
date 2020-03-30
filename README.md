@@ -83,4 +83,4 @@ Then delete the node_modules folder and re-install the dependencies with
 - [Bootstrap 4 documentation](https://getbootstrap.com/docs/4.0/utilities/colors/)
 - [bootstrap icons for login](https://icons.getbootstrap.com/)
 - [MDBootstrap Documentation](https://mdbootstrap.com/docs/jquery/forms/customization/)
-- [resetting error message on login screen](https://stackoverflow.com/questions/21457904/change-element-display-none-back-to-default-style-value-js)
+- [reseting error message on login screen](https://stackoverflow.com/questions/21457904/change-element-display-none-back-to-default-style-value-js)
