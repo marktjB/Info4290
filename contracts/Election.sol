@@ -1,6 +1,4 @@
 pragma solidity 0.4.25;
-// import "./Migrations.sol";
-// import "./delete.js";
 
 contract Election {
     // Model a Candidate
@@ -42,6 +40,8 @@ contract Election {
         candidates[candidatesCount] = Candidate(candidatesCount, _name, 0);
     }
 
+    //This is the part of the smart contract that submits vote
+    //Cast Votes - Step 3 walks through this section a bit
     function vote (uint _candidateId) public {
         // require that they haven't voted before
         require(!voters[msg.sender]);
