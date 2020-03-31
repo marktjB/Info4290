@@ -45,7 +45,7 @@
   <nav>
     <!-- <div class="container-fluid"> -->
     <div class="container-fliud nav-wrapper blue-grey darken-4">
-      <p class="brand-logo"><img src=logoWcircle.png alt="Logo" width="45" /> Can-Vote</p>
+      <p class="brand-logo"><img src=img/logoWcircle.png alt="Logo" width="45" /> Can-Vote</p>
       <ul class="right hide-on-med-and-down">
         <!-- <li><p id="accountAddress"></p></li> -->
         <li><a class="dropdown-trigger" href="#!" data-target="dropdown">Dropdown<i
@@ -90,7 +90,7 @@
       //needs to match names being read - STEVEN NOTE
       const preObject = document.getElementById('object'); //this refers to the id tag in html
       const dbRefObject = firebase.database().ref().child(
-      'candidates'); //Change this one to match specific call from Realtime data ('name')
+        'candidates'); //Change this one to match specific call from Realtime data ('name')
 
       dbRefObject.on('value', snap => {
 
@@ -152,7 +152,7 @@
   <script src="js/web3.min.js"></script>
   <script src="js/truffle-contract.js"></script>
   <script src="js/app.js"></script>
-  <script src="login_script.js"></script>
+  <script src="js/login_script.js"></script>
 </body>
 
 </html>

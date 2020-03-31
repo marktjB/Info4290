@@ -7,7 +7,7 @@
   <title>Can-Vote Elections</title>
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" href="logoWcircle2.png">
+  <link rel="icon" href="img/logoWcircle2.png">
   <!-- Bootstrap -->
   <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
   <!-- From Other Example Code -->
@@ -33,14 +33,14 @@
   <!-- Navigation bar at the top of the window -->
   <nav class="navbar navbar-dark bg-dark">
     <span class="navbar-brand mb-0 h1">
-      <img src=logoWcircle2.png alt="Logo" width="30" height="30" class="d-inline-block align-top" />
+      <img src=img/logoWcircle2.png alt="Logo" width="30" height="30" class="d-inline-block align-top" />
       Can-Vote
     </span>
   </nav>
 
   <!-- Div tag for log in componenents -->
   <div id="login_div" class="main-div">
-    <div align="center" class="h1 mb-0"><img src=logoWcircle.png alt="Logo" width="70" height="70" /> Can-Vote</div>
+    <div align="center" class="h1 mb-0"><img src=img/logoWcircle.png alt="Logo" width="70" height="70" /> Can-Vote</div>
     <br><br>
 
     <!-- Error handling for when user inputs incorrect credentials -->
@@ -67,7 +67,7 @@
   </div>
 
   <div id="user_div" class="loggedin-div">
-    <div align="center" class="h1 mb-0"><img src=logoWcircle.png alt="Logo" width="70" height="70" /> Can-Vote</div>
+    <div align="center" class="h1 mb-0"><img src=img/logoWcircle.png alt="Logo" width="70" height="70" /> Can-Vote</div>
     <br>
     <div align="center">
       <p id="user_para" style="font-size:18px;"></p>
@@ -77,17 +77,18 @@
     <br>
     <div><button onclick="logout()">Logout</button></div>
     <br><br>
+    <!-- Displays user ID -->
     <div align="center"><small id="accountAddress" class="text-center"></small></div>
   </div>
   <script>
     //Function to redirect user to voting menu
     function menuFunction() {
-      window.open("index.html");
+      window.open("index.html", "_self", false); //Has window open in the same window
     }
 
     function candidatesFunction() {
 
-      window.open("candidates.html");
+      window.open("candidates.html", "_self", false); //Has window open in the same window
     }
   </script>
 
@@ -111,7 +112,7 @@
     firebase.analytics();
   </script>
   <!--Script needed for user login. Access firebase login creditials-->
-  <script src="login_script.js"></script>
+  <script src="js/login_script.js"></script>
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
