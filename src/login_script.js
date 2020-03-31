@@ -62,9 +62,9 @@ function login() {
 
 function logout() {
   firebase.auth().signOut();
+  location.reload(); //Refreshes page so that the elements reload
   // Clears fields on the login screen
   document.getElementById("email_field").value = '';
   document.getElementById("password_field").value = '';
-  // document.getElementById("error_message").style.display = "none";
-  document.getElementById("error_message").style.removeProperty('display');
+  document.getElementById("error_message").style.display = "none";
 }
