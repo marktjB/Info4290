@@ -25,14 +25,13 @@ contract Election {
         uint indexed _candidateId
     );
 
-    
 
     // Add Candidates through the loop
     constructor () public {
         for(uint i=0; i<x.length; i++){
             addCandidate(x[i]);
         }
-        // addCandidate("Renzo");
+        // addCandidate("Manual Candidate");
     }
 
     function addCandidate (string _name) private {

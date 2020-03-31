@@ -85,3 +85,4 @@ Then delete the node_modules folder and re-install the dependencies with
 - [MDBootstrap Documentation](https://mdbootstrap.com/docs/jquery/forms/customization/)
 - [reseting error message on login screen](https://stackoverflow.com/questions/21457904/change-element-display-none-back-to-default-style-value-js)
 - [Bootstrap](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
+- [reloading page, fix stuck error message](https://www.w3schools.com/jsref/met_loc_reload.asp)
