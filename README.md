@@ -33,7 +33,7 @@ Install these prerequisites to follow along with the tutorial. See free video tu
 
 ## Step 2. Install dependencies
 ```
-$ cd election-2019_update
+$ cd Info4290-master
 $ npm install
 ```
 ## Step 3. Start Ganache
