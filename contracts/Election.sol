@@ -1,6 +1,4 @@
 pragma solidity 0.4.25;
-// import "./Migrations.sol";
-// import "./delete.js";
 
 contract Election {
     // Model a Candidate
@@ -27,14 +25,13 @@ contract Election {
         uint indexed _candidateId
     );
 
-    
 
     // Add Candidates through the loop
     constructor () public {
         for(uint i=0; i<x.length; i++){
             addCandidate(x[i]);
         }
-        // addCandidate("Renzo");
+        // addCandidate("Manual Candidate");
     }
 
     function addCandidate (string _name) private {
@@ -42,6 +39,8 @@ contract Election {
         candidates[candidatesCount] = Candidate(candidatesCount, _name, 0);
     }
 
+    //This is the part of the smart contract that submits vote
+    //Cast Votes - Step 3 walks through this section a bit
     function vote (uint _candidateId) public {
         // require that they haven't voted before
         require(!voters[msg.sender]);

@@ -6,12 +6,12 @@ firebase.auth().onAuthStateChanged(function (user) {
     document.getElementById("login_div").style.display = "none";
 
     var user = firebase.auth().currentUser;
-    
+
     //User display once logged in 
     if (user != null) {
 
       var email_id = user.email;
-      document.getElementById("user_para").innerHTML = "Welcome User : " + email_id;
+      document.getElementById("user_para").innerHTML = "Welcome " + email_id;
 
     }
 
@@ -26,14 +26,14 @@ firebase.auth().onAuthStateChanged(function (user) {
 
 // Allows user to press enter to to log in from the email field
 document.querySelector("#email_field").addEventListener("keyup", event => {
-  if(event.key !== "Enter") return; 
+  if (event.key !== "Enter") return;
   document.querySelector("#login_button").click();
   event.preventDefault();
 });
 
 // Allows user to press enter to to log in from the password field
 document.querySelector("#password_field").addEventListener("keyup", event => {
-  if(event.key !== "Enter") return; 
+  if (event.key !== "Enter") return;
   document.querySelector("#login_button").click();
   event.preventDefault();
 });
@@ -51,7 +51,9 @@ function login() {
     var errorCode = error.code;
     var errorMessage = error.message;
 
-    window.alert("Error : " + errorMessage);
+    // window.alert("Error : " + errorMessage);
+    // message on screen that an error has occured
+    $("#error_message").html("You have entered invalid credentials");
 
     // ...
   });
@@ -60,4 +62,9 @@ function login() {
 
 function logout() {
   firebase.auth().signOut();
+  location.reload(); //Refreshes page so that the elements reload
+  // Clears fields on the login screen
+  document.getElementById("email_field").value = '';
+  document.getElementById("password_field").value = '';
+  document.getElementById("error_message").style.display = "none";
 }
